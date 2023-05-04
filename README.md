@@ -12,14 +12,14 @@ A Backend application based on NestJS, where NestJS is used to create a chatbot 
       NestJS
     </td>
     <td align="center" valign="middle" width="17%">
-      <a href="https://www.postgresql.org/">
+      <a href="https://telegram.org/">
       <img height="50" alt="Telegram" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/2048px-Telegram_logo.svg.png"/>
       </a>
       <br />
       Telegram
     </td>
     <td align="center" valign="middle" width="17%">
-      <a href="https://typeorm.io/">
+      <a href="https://openai.com/">
       <img height="50" alt="ChatGPT" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/640px-ChatGPT_logo.svg.png"/>
       </a>
       <br />
