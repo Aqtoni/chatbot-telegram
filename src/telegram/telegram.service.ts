@@ -1,3 +1,4 @@
+import { ChatgptService } from '@/chatgpt/chatgpt.service';
 import { ConfigService } from '@nestjs/config';
 import { Ctx, Message, On, Start, Update } from 'nestjs-telegraf';
 import { Scenes, Telegraf } from 'telegraf';
@@ -6,7 +7,10 @@ type Context = Scenes.SceneContext;
 
 @Update()
 export class TelegramService extends Telegraf<Context> {
-  constructor(private readonly configService: ConfigService) {
+  constructor(
+    private readonly configService: ConfigService,
+    private readonly gpt: ChatgptService,
+  ) {
     super(configService.get('TELEGRAM_API'));
   }
   @Start()
@@ -19,6 +23,6 @@ Enter any phrase and get an answer!
 
   @On('text')
   onMessage(@Message('text') message: string) {
-    return `🫠${message}🥳`;
+    return this.gpt.generateResponse(message);
   }
 }
