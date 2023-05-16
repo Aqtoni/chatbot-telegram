@@ -22,7 +22,7 @@ Enter any phrase and get an answer!
   }
 
   @On('text')
-  onMessage(@Message('text') message: string) {
-    return this.gpt.generateResponse(message);
+ onMessage(@Message('text') message: string, @Ctx() ctx: Context) {
+    ctx.replyWithHTML(this.gpt.generateResponse(message));
   }
 }
